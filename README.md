@@ -10,7 +10,7 @@ A full-stack notes app with a React + Vite frontend and an Express + SQLite back
 - Tagging + filter by title/tags  
 - Pin/Unpin notes (pinned sort to top)  
 - Dark/Light mode (saved preference)  
-- QLite persistence via Express REST API
+- SQLite persistence via Express REST API
 
 ## Tech Stack
 - **Frontend:** React, Vite, TypeScript, React-Bootstrap, React-Router, React-Select  
@@ -28,3 +28,18 @@ A full-stack notes app with a React + Vite frontend and an Express + SQLite back
 cd backend
 npm install
 npm run dev
+```
+
+You should see:
+```bash
+Backend running at http://localhost:4000
+Connected to SQLite database.
+```
+
+### 2) Frontend (Vite @ `http://localhost:5173`)
+   
+In a second terminal from the project root:
+```bash
+npm run dev
+```
+Open the printed URL (usually `http://localhost:5173`).
