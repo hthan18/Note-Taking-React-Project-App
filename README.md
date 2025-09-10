@@ -1,69 +1,30 @@
-# React + TypeScript + Vite
+# Note Taking React Project App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack notes app with a React + Vite frontend and an Express + SQLite backend. Write notes in **Markdown**, organize with **tags**, **pin** favorites, filter by title/tags, toggle **dark/light** themes, and more. Data is persisted in SQLite through a simple REST API.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Markdown editing & preview
+- Quick hover delete on cards  
+- Tagging + filter by title/tags  
+- Pin/Unpin notes (pinned sort to top)  
+- Dark/Light mode (saved preference)  
+- QLite persistence via Express REST API
 
-## Expanding the ESLint configuration
+## Tech Stack
+- **Frontend:** React, Vite, TypeScript, React-Bootstrap, React-Router, React-Select  
+- **Backend:** Node.js, Express, SQLite3  
+- **Dev:** Nodemon (backend), Vite (frontend)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Quick Start
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+> Requirements: Node 18+ (or 20+), npm
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 1) Backend (API @ `http://localhost:4000`)
+```bash
+cd backend
+npm install
+npm run dev
